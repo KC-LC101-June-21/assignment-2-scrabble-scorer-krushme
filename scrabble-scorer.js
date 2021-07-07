@@ -42,7 +42,7 @@ return scrabbleInput;
 
 }
 
-function simpleScrabbleScorer(word){
+function simpleScore(word){
 let letterPoints = word.length;
 
 console.log(`Score for '${scrabbleInput}': ${letterPoints}`);
@@ -51,7 +51,7 @@ return letterPoints;
 }
 
 
-function vowelBonusScorer(word){
+function vowelBonusScore(word){
 wordArray = word.toLowerCase().split("");
 let vowels = ["a", "e", "i", "o", "u"];
 let vowelPoint = 3;
@@ -83,25 +83,25 @@ function scrabbleScore(word) {
 	return letterPoints;
   }
 
-let simpleScore = {
+let simpleScoreObject = {
   name: "Simple Score",
   description: "Each letter is worth 1 point.",
-  scoringFunction: simpleScrabbleScorer
+  scoringFunction: simpleScore
 };
 
-let vowelBonusScore = {
+let vowelBonusScoreObject = {
   name: "Bonus Vowels",
   description: "Vowels are 3 pts, consonants are 1 pt.",
-  scoringFunction:vowelBonusScorer
+  scoringFunction:vowelBonusScore
 };
 
 let scrabbleScoring = {
-  name: "Simple Score",
+  name: "Scrabble",
   description: "The traditional scoring algorithm.",
   scoringFunction:scrabbleScore
 };
 
-const scoringAlgorithms = [simpleScore, vowelBonusScore, scrabbleScoring];
+const scoringAlgorithms = [simpleScoreObject, vowelBonusScoreObject, scrabbleScoring];
 
 function scorerPrompt() {
   let selectedAlgorithm = input.question(`Which scoring algorithm would you like to use?
