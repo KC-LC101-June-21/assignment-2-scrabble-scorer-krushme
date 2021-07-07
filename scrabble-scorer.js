@@ -70,7 +70,7 @@ return finalScore;
 }
 
 
-function scrabbleScorer(word) {
+function scrabbleScore(word) {
 	simpleWord = word.toLowerCase();
 	let letterPoints = 0;
  
@@ -95,13 +95,13 @@ let vowelBonusScore = {
   scoringFunction:vowelBonusScorer
 };
 
-let scrabbleScore = {
+let scrabbleScoring = {
   name: "Simple Score",
   description: "The traditional scoring algorithm.",
-  scoringFunction:scrabbleScorer
+  scoringFunction:scrabbleScore
 };
 
-const scoringAlgorithms = [simpleScore, vowelBonusScore, scrabbleScore];
+const scoringAlgorithms = [simpleScore, vowelBonusScore, scrabbleScoring];
 
 function scorerPrompt() {
   let selectedAlgorithm = input.question(`Which scoring algorithm would you like to use?
